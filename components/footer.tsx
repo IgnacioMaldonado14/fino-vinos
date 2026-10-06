@@ -1,0 +1,4 @@
+import Link from "next/link";
+import {navigation,site} from "@/data/site";
+import {GrapeIllustration} from "./icons";
+export function Footer(){return <footer className="footer"><div className="footer-top"><div><Link href="/" className="footer-logo">fino</Link><p>Elegí tu próximo brindis.</p></div><GrapeIllustration className="footer-grapes"/><nav aria-label="Navegación del pie">{navigation.map(([label,url])=><Link key={url} href={url}>{label}</Link>)}</nav><div className="footer-contact"><p className="eyebrow">VINOS & ENCUENTROS</p><p>Contacto y redes<br/>por confirmar.</p><Link href="/carrito">Tu cava ↗</Link></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Precios y disponibilidad a confirmar.</span><span>Tomá con moderación. Venta para mayores de 18 años.</span><a href="#inicio" aria-label="Volver al inicio">↑</a></div></footer>}
